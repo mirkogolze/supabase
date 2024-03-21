@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS prompts (
 
 -- INDEXES --
 
-CREATE INDEX prompts_user_id_idx ON prompts(user_id);
+--CREATE INDEX prompts_user_id_idx ON prompts(user_id);
 
 -- RLS --
 
