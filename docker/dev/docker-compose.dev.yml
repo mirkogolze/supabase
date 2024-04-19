@@ -24,17 +24,18 @@ services:
       - 5555:8080
   db:
     restart: 'no'
-    #volumes:
+    volumes:
       # Always use a fresh database when developing
       # - /var/lib/postgresql/data
       # Seed data should be inserted last (alphabetical order)
       #- ./dev/data.sql:/docker-entrypoint-initdb.d/seed.sql
+      - /var/ai/volumes/postgresql/data:/var/lib/postgresql/data
   storage:
     volumes:
       - /var/lib/storage
   qdrant:
     volumes:
-      - /var/gpu-volumes/llmhub/qdrant/storage:/qdrant/storage
+      - /var/ai/volumes/qdrant/storage:/qdrant/storage
     ports:
       - "6333:6333"
     image: qdrant/qdrant  

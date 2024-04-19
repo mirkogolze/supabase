@@ -383,7 +383,6 @@ services:
       - ./volumes/db/logs.sql:/docker-entrypoint-initdb.d/migrations/99-logs.sql:Z
       # Use named volume to persist pgsodium decryption key between restarts
       - db-config:/etc/postgresql-custom
-
   vector:
     container_name: supabase-vector
     image: timberio/vector:0.28.1-alpine
